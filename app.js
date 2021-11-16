@@ -9,10 +9,17 @@ const app = express()
 // Connect to MongoDB
 require('./config/mongoose')
 
+// Static files
+app.use(express.static('public'))
+
+// Set template engine to handlebars
+app.engine('handlebars', exhbs.engine({ defaultLayout: 'main' }))
+app.set('view engine', 'handlebars')
+
 
 // Routers
 app.get('/', (req, res) => {
-  res.send(`<h1>teenyURL Project</h1>`)
+  res.render('index')
 })
 
 app.listen(PORT, () => {

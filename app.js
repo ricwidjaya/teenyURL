@@ -1,6 +1,7 @@
 // Import modules
 const express = require('express')
 const exhbs = require('express-handlebars')
+const shortenUrl = require('./url_shortener')
 
 // Create server
 const PORT = process.env.PORT || 3000
@@ -26,8 +27,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
+  const charsOfURL = 5
   console.log(req.body)
-  console.log('post request')
+  shortenUrl()
 })
 
 app.listen(PORT, () => {

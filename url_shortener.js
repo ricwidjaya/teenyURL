@@ -24,8 +24,6 @@ const url = {
     const max = this.map.length ** this.charsOfURL
     return Math.floor(Math.random() * max) + 1
   }
-
-
 }
 
 

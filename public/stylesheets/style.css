@@ -1,0 +1,9 @@
+.container {
+  margin: 10px;
+}
+
+.shorten {
+  height: 100%;
+  padding-bottom: 100%;
+  background-color: black;
+}

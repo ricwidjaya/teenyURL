@@ -56,7 +56,6 @@ app.post('/', (req, res) => {
 // Redirect for short url
 app.get('/teenyurl/:url', (req, res) => {
   const shortenURL = req.params.url
-  console.log(shortenURL)
   URL.find({ shorten: shortenURL })
     .lean()
     .then(query => res.redirect(query[0].long))

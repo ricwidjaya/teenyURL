@@ -1,35 +1,37 @@
 const url = {
   map: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789",
+  charsOfURL: 5,
 
-  shortener(url) {
-    // Define replacing letter map for shorten url
-
-    // Check if url already been shorten
-
-    // Create index key for url
-
-    // Check if index exists, if so, recreate one
-
-    // 
-    console.log('hello')
-    console.log(this.map.length)
+  base() {
+    return this.map.length
   },
 
-  generateId() {
-    // Dummy data
-    const charsOfURL = 5
+  shortener(id) {
+    const base = this.base()
 
-    const max = this.map.length ** charsOfURL
-    return Math.floor(Math.random() * max) + 1
+    // Convert Id into base 62
+    shortenURL = ''
+    while (id > 0) {
+      shortenURL = this.map[id % base] + shortenURL
+      id = Math.floor(id / base)
+    }
+
+    return shortenURL
   },
 
+  // Return origin url for redirecting
   toLong(shortenUrl) {
-    console.log('Let there be loooong')
+    // 
+  },
+
+  // New id for new url
+  generateHash() {
+    const max = this.map.length ** this.charsOfURL
+    return Math.floor(Math.random() * max) + 1
   }
+
 
 }
 
-url.shortener()
-console.log(url.generateId())
-url.toLong()
-// module.exports = urlShortener
+
+module.exports = url

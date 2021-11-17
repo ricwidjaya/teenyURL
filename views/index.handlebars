@@ -2,3 +2,15 @@
   <input type="text" name="url" id="url" placeholder="Input URL here">
   <button type="submit">Shorten</button>
 </form>
+
+{{#if exist}}
+<div>
+  <p>This URL exists.</p>
+</div>
+{{/if}}
+
+{{#if shortenURL}}
+<div>
+  <p>Here's your shorten URL: teenyurl/{{ shortenURL }}</p>
+</div>
+{{/if}}

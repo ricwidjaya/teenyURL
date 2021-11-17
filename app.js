@@ -1,7 +1,8 @@
 // Import modules
 const express = require('express')
 const exhbs = require('express-handlebars')
-const shortenUrl = require('./url_shortener')
+const url = require('./url_shortener')
+const URL = require('./models/URL')
 
 // Create server
 const PORT = process.env.PORT || 3000
@@ -27,9 +28,29 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  const charsOfURL = 5
-  console.log(req.body)
-  shortenUrl()
+  const longURL = req.body.url
+
+  // Check if URL is already been shorten
+  URL.find({ long: longURL })
+    .lean()
+    .then(query => {
+      // Return the shorten url in database
+      if (query.length) {
+        res.render('index', { shortenURL: query[0].shorten })
+      } else {
+        // Create new url for shorten url
+        const hash = url.generateHash()
+        const shortenURL = url.shortener(hash)
+        
+        URL.create({
+          hash,
+          long: longURL,
+          shorten: shortenURL
+        })
+        res.render('index', { shortenURL })
+      }
+    })
+    .catch(error => console.log(error))
 })
 
 app.listen(PORT, () => {

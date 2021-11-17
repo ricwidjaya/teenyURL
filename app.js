@@ -41,7 +41,7 @@ app.post('/', (req, res) => {
         // Create new url for shorten url
         const hash = url.generateHash()
         const shortenURL = url.shortener(hash)
-        
+
         URL.create({
           hash,
           long: longURL,
@@ -53,6 +53,18 @@ app.post('/', (req, res) => {
     .catch(error => console.log(error))
 })
 
+// Redirect for short url
+app.get('/teenyurl/:url', (req, res) => {
+  const shortenURL = req.params.url
+  console.log(shortenURL)
+  URL.find({ shorten: shortenURL })
+    .lean()
+    .then(query => res.redirect(query[0].long))
+    .catch(error => console.log(error))
+})
+
+
+// Listen to requests
 app.listen(PORT, () => {
   console.log(`teenyURL APP runs on ${PORT}`)
 })

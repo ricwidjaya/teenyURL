@@ -19,11 +19,6 @@ const url = {
     return shortenURL
   },
 
-  // Return origin url for redirecting
-  toLong(shortenUrl) {
-    // 
-  },
-
   // New id for new url
   generateHash() {
     const max = this.map.length ** this.charsOfURL

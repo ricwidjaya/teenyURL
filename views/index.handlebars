@@ -5,25 +5,31 @@
     <div class="col-sm-8 shorten">
       <header>ALL Links</header>
       <hr>
-      <div class="view">
-        <div class="row d-flex align-items-center">
-          <div class="col d-flex justify-content-center">
-            <div class="link">
-              <small>https://tw.alphacamp.co</small>
-              <h5>teenyurl/Hsk36</h5>
+      <div class="link-container">
+        {{#each urls}}
+        <div class="view">
+          <div class="row d-flex align-items-center">
+            <div class="col-5 links">
+              <div class="link">
+                <small>{{ this.long }}</small>
+                <h5>teenyurl/{{ this.shorten }}</h5>
+              </div>
+            </div>
+            <div class="col-3 d-flex justify-content-end">
+              <button class="btn btn-dark btn-sm">COPY</button>
+            </div>
+            <div class="col-3 d-flex justify-content-center align-items-center click-box">
+              <small class="clicks">Clicks</small>
+              <p>{{ this.clicks }}</p>
             </div>
           </div>
-          <div class="col d-flex justify-content-center">
-            <button class="btn btn-dark btn-sm">COPY</button>
-          </div>
-          <div class="col d-flex justify-content-center align-items-center click-box">
-            <small class="clicks">Clicks</small>
-            <p>276</p>
-          </div>
         </div>
+        {{/each}}
       </div>
+      {{!-- Render Links --}}
 
     </div>
+
     {{!-- Create links --}}
     <div class="col-sm-4">
       <header>Create Link</header>
@@ -55,12 +61,6 @@
 
 
 
-
-  {{#if exist}}
-  <div>
-    <p>This URL exists.</p>
-  </div>
-  {{/if}}
 
   {{#if shortenURL}}
   <div>

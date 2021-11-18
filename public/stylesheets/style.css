@@ -56,13 +56,23 @@ form > p {
 }
 
 /* View */
+.link-container {
+  height: 70vh;
+  overflow-y: scroll;
+}
+
 .view {
   background-color: rgb(255, 248, 240);
   border-radius: 15px;
+  margin-bottom: 1rem;
 }
 
 .link > h5 {
   color: rgb(247, 106, 12);
+}
+
+.links {
+  margin-left: 1rem;
 }
 
 small {
@@ -76,8 +86,9 @@ small {
 
 .clicks {
   position: absolute;
-  top: -10px;
-  left: 50px;
+  top: -0.3rem;
+  left: 1.5rem;
+  
 }
 
 .click-box > p {

@@ -24,7 +24,9 @@ app.set('view engine', 'handlebars')
 
 // Routers
 app.get('/', (req, res) => {
-  res.render('index')
+  URL.find()
+    .lean()
+    .then(urls => res.render('index', { urls }))
 })
 
 app.post('/', (req, res) => {

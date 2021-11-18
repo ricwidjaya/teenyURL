@@ -7,12 +7,12 @@ html, body {
   background-color: #dcebeb;
 }
 
-.container {
-  margin: 50px 30px;
-}
-
 nav {
   padding: 20px;
+}
+
+.container {
+  margin: 50px 30px;
 }
 
 header {
@@ -49,4 +49,37 @@ form > p {
   box-shadow: none;
 }
 
+.btn:hover {
+  border: none;
+  color: #fff;
+  background-color: rgb(247, 106, 12);
+}
 
+/* View */
+.view {
+  background-color: rgb(255, 248, 240);
+  border-radius: 15px;
+}
+
+.link > h5 {
+  color: rgb(247, 106, 12);
+}
+
+small {
+  font-size: 12px;
+  color:rgb(102, 102, 102);
+}
+
+.click-box {
+  position: relative;
+}
+
+.clicks {
+  position: absolute;
+  top: -10px;
+  left: 50px;
+}
+
+.click-box > p {
+  margin: auto;
+}

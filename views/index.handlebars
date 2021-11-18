@@ -1,14 +1,36 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-8 shorten">
-      <img src="/image/link.png" alt="">
-      <form action="/" method="POST">
-        <input type="text" name="url" id="url" placeholder="Input URL here">
-        <button type="submit">Shorten</button>
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="col-sm-4">
+      <header>Create Link</header>
+      <hr>
+      <form action='/' method="POST" class="form-inline my-2 my-lg-0">
+        <div class="inputs">
+          <p>LONG URL</p>
+          <input id="url" class="form-control mr-sm-2" name="url" type="text" placeholder="Input URL here" required>
+        </div>
+        <h5>UTM Parameter (Optional)</h5>
+        <p>UTMs can help you track web traffic in analytics tools.</p>
+        <div class="inputs">
+          <p>SOURCE</p>
+          <input id="source" class="form-control mr-sm-2" name="source" type="text" placeholder="e.g. google, facebook">
+        </div>
+        <div class="inputs">
+          <p>MEDIUM</p>
+          <input id="medium" class="form-control mr-sm-2" name="medium" type="text" placeholder="e.g. cpc, email">
+        </div>
+        <div class="inputs">
+          <p>CAMPAIGN</p>
+          <input id="campaign" class="form-control mr-sm-2" name="campaign" type="text"
+            placeholder="e.g. summer_discount">
+        </div>
+        <button type="submit" class="btn btn-dark">Shorten</button>
       </form>
     </div>
-    <div class="col-sm-4">col-sm-4</div>
   </div>
+
 
 
 

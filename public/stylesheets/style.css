@@ -1,9 +1,52 @@
-.container {
-  margin: 10px;
+*, body {
+  box-sizing: border-box;
 }
 
-.shorten {
-  height: 100%;
-  padding-bottom: 100%;
-  background-color: black;
+html, body {
+  font-family: 'Lato', 'Noto Sans TC', sans-serif;
+  background-color: #dcebeb;
 }
+
+.container {
+  margin: 50px 30px;
+}
+
+nav {
+  padding: 20px;
+}
+
+header {
+  font-size: x-large;
+}
+
+/* Form letters */
+form > p {
+  font-size: 0.5 rem;
+  font-weight: 100;
+}
+
+/* Input groups */
+.inputs {
+  margin: 20px 0;
+  padding: 0 20px;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid rgb(66, 66, 66);
+}
+
+.inputs p {
+  font-size: smaller;
+  margin: 5px 0 0 20px;
+}
+
+.inputs input {
+  margin: 5px;
+  max-width: 100%;
+  border: none;
+}
+
+.inputs input:focus {
+  box-shadow: none;
+}
+
+

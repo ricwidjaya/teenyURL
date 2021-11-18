@@ -29,7 +29,6 @@ app.get('/', (req, res) => {
 
 app.post('/', (req, res) => {
   const longURL = req.body.url
-
   // Check if URL is already been shorten
   URL.find({ long: longURL })
     .lean()

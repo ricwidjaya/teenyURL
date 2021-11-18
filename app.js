@@ -26,7 +26,10 @@ app.set('view engine', 'handlebars')
 app.get('/', (req, res) => {
   URL.find()
     .lean()
-    .then(urls => res.render('index', { urls }))
+    .then(urls => res.render('index', {
+      urls,
+      script: 'main.js'
+    }))
 })
 
 app.post('/', (req, res) => {
@@ -39,7 +42,8 @@ app.post('/', (req, res) => {
       if (query.length) {
         res.render('create', {
           shortenURL: query[0].shorten,
-          style: 'create.css'
+          style: 'create.css',
+          script: 'create.js'
         })
       } else {
         // Create new url for shorten url
@@ -53,7 +57,8 @@ app.post('/', (req, res) => {
         })
         res.render('create', {
           shortenURL,
-          style: 'create.css'
+          style: 'create.css',
+          script: 'create.js'
         })
       }
     })

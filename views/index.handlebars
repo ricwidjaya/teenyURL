@@ -6,6 +6,8 @@
       <header>ALL Links</header>
       <hr>
       <div class="link-container">
+
+        {{!-- Render Links --}}
         {{#each urls}}
         <div class="view">
           <div class="row d-flex align-items-center">
@@ -25,9 +27,8 @@
           </div>
         </div>
         {{/each}}
-      </div>
-      {{!-- Render Links --}}
 
+      </div>
     </div>
 
     {{!-- Create links --}}
@@ -37,7 +38,8 @@
       <form action='/' method="POST" class="form-inline my-2 my-lg-0">
         <div class="inputs">
           <p>LONG URL</p>
-          <input id="url" class="form-control mr-sm-2" name="url" type="text" placeholder="Input URL here" required>
+          <input id="url" class="form-control mr-sm-2" name="url" type="text" placeholder="Input URL here"
+            autocomplete="off" required>
         </div>
         <h5>UTM Parameter (Optional)</h5>
         <p>UTMs can help you track web traffic in analytics tools.</p>
@@ -54,18 +56,7 @@
           <input id="campaign" class="form-control mr-sm-2" name="campaign" type="text"
             placeholder="e.g. summer_discount">
         </div>
-        <button type="submit" class="btn btn-dark">Shorten</button>
+        <button type="submit" class="btn btn-dark">Create</button>
       </form>
     </div>
   </div>
-
-
-
-
-  {{#if shortenURL}}
-  <div>
-    <p>Here's your shorten URL: teenyurl/{{ shortenURL }}</p>
-  </div>
-  {{/if}}
-
-</div>

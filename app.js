@@ -37,7 +37,10 @@ app.post('/', (req, res) => {
     .then(query => {
       // Return the shorten url in database
       if (query.length) {
-        res.render('index', { shortenURL: query[0].shorten })
+        res.render('create', {
+          shortenURL: query[0].shorten,
+          style: 'create.css'
+        })
       } else {
         // Create new url for shorten url
         const hash = url.generateHash()
@@ -48,7 +51,10 @@ app.post('/', (req, res) => {
           long: longURL,
           shorten: shortenURL
         })
-        res.render('index', { shortenURL })
+        res.render('create', {
+          shortenURL,
+          style: 'create.css'
+        })
       }
     })
     .catch(error => console.log(error))

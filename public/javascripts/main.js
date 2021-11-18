@@ -1,4 +1,6 @@
 const view = document.querySelectorAll('.view')
+const form = document.querySelector('#form')
+const urlInput = document.querySelector('#url')
 
 
 // Listen to copy buttons clicks
@@ -12,3 +14,29 @@ view.forEach(link => {
   })
 })
 
+
+// Check url validation
+form.addEventListener('submit', (event) => {
+  const url = urlInput.value
+  if (!validateURL(url)) {
+    event.preventDefault()
+  }
+  const validation = validateURL()
+  console.log(`validation: ${validation}`)
+})
+
+// Function
+
+// Check if a string is valid URL
+function validateURL(str) {
+  let url
+
+  try {
+    url = new URL(str)
+    console.log(url)
+  } catch (error) {
+    console.log(error)
+    return false
+  }
+  return url.protocol === 'https:' || url.protocol === 'http:'
+}

@@ -27,5 +27,5 @@ app.use(routes)
 
 // Listen to requests
 app.listen(PORT, () => {
-  console.log(`teenyURL APP runs on ${PORT}`)
+  console.log(`teenyURL APP runs on port ${PORT}`)
 })

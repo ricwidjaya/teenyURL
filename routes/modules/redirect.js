@@ -5,9 +5,12 @@ const URL = require('../../models/URL')
 // Redirect for short url
 router.get('/:url', (req, res) => {
   const shortenURL = req.params.url
-  URL.find({ shorten: shortenURL })
-    .lean()
-    .then(query => res.redirect(query[0].long))
+  URL.findOne({ shorten: shortenURL })
+    .then(query => {
+      query.clicks += 1
+      query.save()
+      res.redirect(query.long)
+    })
     .catch(error => console.log(error))
 })
 

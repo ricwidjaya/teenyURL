@@ -19,6 +19,27 @@ header {
   font-size: x-large;
 }
 
+/* Alert */
+.alert {
+  position: absolute;
+  top: 10vh;
+  left: 25%;
+  width: 50%;
+  z-index: 999;
+  opacity: 0;
+}
+
+.fadeout {
+  animation-name: fadeout;
+  animation-duration: 3s;
+}
+
+@keyframes fadeout {
+  0% { opacity: 1; }
+  50% { opacity: 1; }
+  100% {{ opacity: 0; }}
+}
+
 /* Form letters */
 form > p {
   font-size: 0.5 rem;
@@ -46,8 +67,10 @@ form > p {
 }
 
 .inputs input:focus {
+  outline: none;
   box-shadow: none;
 }
+
 
 .btn:hover {
   border: none;

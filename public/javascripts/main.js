@@ -1,6 +1,8 @@
 const view = document.querySelectorAll('.view')
 const form = document.querySelector('#form')
 const urlInput = document.querySelector('#url')
+const alert = document.querySelector('.alert')
+const submitBtn = document.querySelector('#submitBtn')
 
 
 // Listen to copy buttons clicks
@@ -20,6 +22,8 @@ form.addEventListener('submit', (event) => {
   const url = urlInput.value
   if (!validateURL(url)) {
     event.preventDefault()
+    alert.classList.remove('fadeout')
+    setTimeout(() => { alert.classList.add('fadeout') }, 200)
   }
   const validation = validateURL()
   console.log(`validation: ${validation}`)

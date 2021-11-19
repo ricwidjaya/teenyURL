@@ -1,5 +1,9 @@
 <div class="container">
   <div class="row">
+    {{!-- Alert --}}
+    <div class="alert alert-danger" role="alert">
+      A simple danger alert—check it out!
+    </div>
 
     {{!-- Links --}}
     <div class="col-sm-8 shorten">
@@ -35,11 +39,14 @@
     <div class="col-sm-4">
       <header>Create Link</header>
       <hr>
-      <form id="form" action='/' method="POST" class="form-inline my-2 my-lg-0">
+      <form id="form" action='/' method="POST" class="form-inline my-2 my-lg-0" novalidate>
         <div class="inputs">
           <p>LONG URL</p>
           <input id="url" class="form-control mr-sm-2" name="url" type="text" placeholder="Paste long URL here"
             autocomplete="off" required>
+          <div class="invalid-feedback">
+            <p>Please Enter Valid URL</p>
+          </div>
         </div>
         <h5>UTM Parameter (Optional)</h5>
         <p>UTMs can help you track web traffic in analytics tools.</p>
@@ -56,7 +63,7 @@
           <input id="campaign" class="form-control mr-sm-2" name="campaign" type="text"
             placeholder="e.g. summer_discount">
         </div>
-        <button type="submit" class="btn btn-dark">Create</button>
+        <button id="submitBtn" type="submit" class="btn btn-dark">Create</button>
       </form>
     </div>
   </div>

@@ -26,6 +26,7 @@ app.set('view engine', 'handlebars')
 app.get('/', (req, res) => {
   URL.find()
     .lean()
+    .sort({ _id: 'desc' })
     .then(urls => res.render('index', {
       urls,
       script: 'main.js'
@@ -33,7 +34,9 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  const longURL = req.body.url
+  const form = req.body
+  console.log(form)
+  const longURL = url.combine(form)
   // Check if URL is already been shorten
   URL.find({ long: longURL })
     .lean()

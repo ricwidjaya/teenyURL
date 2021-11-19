@@ -23,6 +23,16 @@ const url = {
   generateHash() {
     const max = this.map.length ** this.charsOfURL
     return Math.floor(Math.random() * max) + 1
+  },
+
+  // URL concatenation
+  combine(form) {
+    let longURL = form.url
+    if (form.source && form.medium && form.campaign) {
+      longURL += `?utm_source=${form.source}&utm_medium=${form.medium}&utm_campaign=${form.campaign}`
+      return longURL
+    }
+    return longURL
   }
 }
 

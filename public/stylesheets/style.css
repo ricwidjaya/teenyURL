@@ -37,7 +37,7 @@ header {
 @keyframes fadeout {
   0% { opacity: 1; }
   50% { opacity: 1; }
-  100% {{ opacity: 0; }}
+  100% { opacity: 0; }
 }
 
 /* Form letters */
@@ -111,7 +111,6 @@ small {
   position: absolute;
   top: -0.3rem;
   left: 1.5rem;
-  
 }
 
 .click-box > p {

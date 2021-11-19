@@ -25,8 +25,6 @@ form.addEventListener('submit', (event) => {
     alert.classList.remove('fadeout')
     setTimeout(() => { alert.classList.add('fadeout') }, 200)
   }
-  const validation = validateURL()
-  console.log(`validation: ${validation}`)
 })
 
 // Function
@@ -37,7 +35,6 @@ function validateURL(str) {
 
   try {
     url = new URL(str)
-    console.log(url)
   } catch (error) {
     console.log(error)
     return false

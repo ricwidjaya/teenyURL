@@ -25,7 +25,7 @@ const url = {
     return Math.floor(Math.random() * max) + 1
   },
 
-  // URL concatenation
+  // URL concatenation with UTM
   combine(form) {
     let longURL = form.url
     if (form.source && form.medium && form.campaign) {
